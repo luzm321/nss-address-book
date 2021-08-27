@@ -13,7 +13,7 @@ namespace AddressBook
             Rolodex = new Dictionary<string, Contact>();
         }
 
-        // method to add a Contact object parameter to the AddressBook class
+        // method to add a Contact object param to the AddressBook class with the email address as the key and value as the contact object
         public void AddContact(Contact personContact)
         {
             Rolodex.Add(personContact.Email, personContact);
