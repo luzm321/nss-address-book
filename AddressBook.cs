@@ -1,6 +1,6 @@
-// using System;
+using System;
 using System.Collections.Generic;
-// using System.Linq;
+
 
 namespace AddressBook
 {
@@ -16,7 +16,14 @@ namespace AddressBook
         // method to add a Contact object param to the AddressBook class with the email address as the key and value as the contact object
         public void AddContact(Contact personContact)
         {
-            Rolodex.Add(personContact.Email, personContact);
+            try
+            {
+                Rolodex.Add(personContact.Email, personContact);
+            }
+            catch (ArgumentException)
+            {
+                Console.WriteLine($"Attempted to add a duplicate contact with email: {personContact.Email}. Please add a new contact!");
+            }
         }
 
         // method to retrieve contact by email
